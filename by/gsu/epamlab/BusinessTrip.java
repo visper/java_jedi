@@ -14,6 +14,10 @@ public class BusinessTrip {
 	
 	public BusinessTrip(String employer_id, int transport_expances, int day_num) {
 		super();
+		if (employer_id == null || transport_expances < 1 || day_num < 1) {
+			System.out.println("error init data");
+			System.exit(-1);
+		}
 		this.employer_id = employer_id;
 		this.transport_expances = transport_expances;
 		this.day_num = day_num;
@@ -48,16 +52,14 @@ public class BusinessTrip {
 	}
 
 	public void show() {
-		System.out.println("daily_allowance =" + daily_allowance);
-		System.out.println("employer_id =" + employer_id);
-		System.out.println("transport_expances =" + transport_expances);
-		System.out.println("day_num =" + day_num);
-		System.out.println("total =" + getTotal());
+		System.out.println("daily_allowance = " + daily_allowance);
+		System.out.println("employer_id = " + employer_id);
+		System.out.println("transport_expances = " + transport_expances);
+		System.out.println("day_num = " + day_num);
+		System.out.println("total = " + getTotal());
 	}
 	
 	public String toString() {
-//		return this.employer_id +";" + this.daily_allowance + ";" + this.transport_expances +
-				//";" + this.day_num + ";" + this.getTotal();
 		return employer_id +";" + daily_allowance + ";" + transport_expances +
 				";" + day_num + ";" + getTotal();
 	}
